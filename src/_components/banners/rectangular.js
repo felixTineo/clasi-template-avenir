@@ -4,7 +4,7 @@ import { Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../buttons';
 
 const BannerCont = styled.div`
-  margin-top: 2rem;
+  //margin-top: 2rem;
   padding: 2rem 0;
   background-color: transparent;
   background-image: ${props => props.image ? `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props.image})` : ""};
@@ -16,10 +16,9 @@ const BannerCont = styled.div`
 const Title = styled.p`
   text-align: center;
   font-size: 22px;
-  font-weight: bold;
   margin: 0;
   margin-bottom: 2rem;
-  color: ${props => props.theme.main.primaryColor};
+  color: #fff;
   @media(min-width: 768px){
     text-align: left;
     margin-bottom: 0;
@@ -42,7 +41,7 @@ export default ({ title, image, onClick, buttonText, icon }) => {
           </Title>
         </Col>
         <Col xs={12} md={3}>
-          <Button onClick={onClick} block primary rounded>
+          <Button onClick={onClick} block rounded>
             {buttonText}
           </Button>
         </Col>        

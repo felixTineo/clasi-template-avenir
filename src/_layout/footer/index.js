@@ -52,7 +52,6 @@ const NavLink = styled.a`
   color: #212121;
   transition: 250ms ease;
   text-decoration: none;
-  font-weight: bold;
   margin-bottom: 1rem;
   @media(min-width: 768px){
     display: block;

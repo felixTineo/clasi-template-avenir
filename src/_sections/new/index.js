@@ -12,6 +12,9 @@ const Header = styled.header`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  //background-color: red;
+  background-color: ${props => props.theme.main.primaryColor};
+  padding-top: 4rem;
 `
 const InnerHeader = styled.div`
     min-height: 60vh;
@@ -22,12 +25,13 @@ const InnerHeader = styled.div`
 `
 const HeaderTitle = styled.h1`
   margin-top: 0;
-  color: ${props => props.theme.main.primaryColor};
+  color: #fff;
 `
 const HeaderDateContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  color: #fff;
 `
 const HeaderDate = styled.p `
   margin-right: 2rem;
@@ -35,8 +39,8 @@ const HeaderDate = styled.p `
 const Tag = styled.p`
   padding: 5px 19px;
   border-radius: 20px;
-  background: ${props => props.theme.main.primaryColor};
-  color: #fff;
+  background: #fff;
+  color:${props => props.theme.main.primaryColor};
   user-select: none;
 `
 const Image = styled.img`
@@ -52,8 +56,8 @@ const IntroFooter = styled.div`
   margin: 4rem 0;
   padding: 2rem;
   color: #fff;
-  font-style: italic;
-  color: ${props => props.theme.main.primaryColor};
+  color: #fff;
+  background-color: ${props => props.theme.main.primaryColor};
 `
 const SocialCont = styled.ul`
   list-style: none;

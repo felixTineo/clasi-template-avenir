@@ -46,7 +46,7 @@ const UserInfoCont = styled.ul`
   text-align: center;
 `
 const UserInfoItem = styled.li`
-  font-weight: bold;
+  //font-weight: bold;
   margin-top: 1rem;
 `
 const ContactForm = styled.form`

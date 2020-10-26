@@ -3,7 +3,7 @@ import Context from '../../_context';
 import styled from 'styled-components';
 import Logo from './logo';
 import Link from '../../_components/link';
-import { LinkButton as Button } from '../../_components/buttons';
+//import { LinkButton as Button } from '../../_components/buttons';
 import RateBar from './rate-bar';
 
 const MainCont = styled.nav`
@@ -20,23 +20,35 @@ const NavItem = styled.li`
   margin-left: ${props => props.noMargin ? 0 : "1.5rem"};
 `
 const NavLink = styled.span`
-  color: #212121;;
+  color: rgba(255, 255, 255, .6);
   transition: 250ms ease;
   text-decoration: none !important;
   &:hover{
-    color: ${props => props.theme.main.primaryColor};;
+    color: #fff;
   }
   &:visited{
     color: rgba(255, 255, 255, .6);
   }
 `
+const Button = styled.button`
+  border: none;
+  background: transparent;
+  transition: 250ms ease;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, .6);
+  &:hover{
+    color: #fff;
+    text-decoration: underline;
+  }
+`
 const SvgCont = styled.svg`
-  fill: ${props => props.theme.main.primaryColor};
+  fill: rgba(255, 255, 255, .6);
   margin-right: .5rem;
   transition: 250ms ease;
-  /*${Button}:hover & {
-    fill: ${props => props.theme.main.primaryColor};
-  }*/
+  ${Button}:hover & {
+    fill: #fff;
+  }
 `
 
 export default ()=> {

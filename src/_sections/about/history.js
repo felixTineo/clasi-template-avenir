@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 
 const MainCont = styled.section`
-  padding: 8rem 0;
+  //padding: 8rem 0;
   //min-height: 100vh;
 `
 const HistoryCont = styled.div`
@@ -22,17 +22,13 @@ const Description = styled.div`
 
 `
 const ImageContainer = styled.div`
-  position: relative;
-  height: 250px;
-  margin-top: 4rem;
-  background-color:  ${props => props.theme.main.primaryColor};
-  @media(min-width: 768px){
-    height: 100%;
-    margin-top: 0;
-  }
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 const Image = styled.img`
-  width: 90%;
+  width: 100%;
 `
 
 
@@ -51,7 +47,9 @@ export default ()=> {
             </HistoryCont>
           </Col>
           <Col xs={12} md={6}>
-            <Image src={state.description.background} alt="historia" />
+            <ImageContainer>
+              <Image src={state.description.background} alt="historia" />
+            </ImageContainer>
           </Col>                    
         </Row>
       </Container>

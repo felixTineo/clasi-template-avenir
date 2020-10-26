@@ -81,7 +81,7 @@ export default ()=> {
   },[]);
 
   return(
-    <Container>
+    <Container id="properties">
       <div style={{ paddingTop: '5rem' }}>
         <Row>
           {

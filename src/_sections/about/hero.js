@@ -1,56 +1,121 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { Container, Row, Col } from 'react-grid-system';
 import Context from '../../_context';
+import { FormProperty } from '../../_components/forms'
+import { Container } from 'react-grid-system';
+import RateBar from '../../_layout/header/rate-bar';
+import { DownCircleFilled, DownOutlined } from '@ant-design/icons';
+import { hexTorgba } from '../../_util';
 
-const MainCont = styled.section`
-    //background-image: url(${props => props.theme.about.hero.background});
-    background-color: ${props => props.theme.main.primaryColor};
-    background-size: cover;
-    background-repeat: no-repeat;
+const VeryMainCont = styled.section`
+  background-image: ${props => `linear-gradient(${hexTorgba(props.theme.main.primaryColor, .8)},${hexTorgba(props.theme.main.primaryColor, .8)})`}, url(${props => props.theme.home.hero.background});
+  background-position: right bottom;
+  //background-size: cover;
+  background-repeat: no-repeat;
+  //color: #fff;
+`
+const MainCont = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: ${props => props.theme.main.primaryColor};
+  @media(min-width: 768px){
+    min-height: calc(100vh - 81px);    
+  }
 `
 const TitleCont = styled.div`
-  position: relative;
-  height: 100vh;
+  min-height: calc(50vh - (81px + 1.4rem));    
   display: flex;
-  justify-content:center;
   align-items: center;
-  @media(min-width: 768px){
-    justify-content:flex-start;
-    height: 50vh;
-  }
 `
+
 const Title = styled.h1`
-  position: relative;
-  color: #fff;
-  padding: 1rem;
-  text-align: left;
-  margin: 0;
-  width: 100%;
   font-weight: 300;
-  @media(min-width: 576px){
-    text-align: left;
-    width: 50vw;
+  max-width: 95%;
+  font-size: 32px;
+  text-align: left;
+  color: #fff;
+  @media(min-width: 768px){
+    max-width: 70%;
+    font-size: 50px;
   }
 `
-const Image = styled.img`
-  width: 50vw;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+const FormCont = styled.div`
+  background-image: url(${props => props.theme.about.hero.background});
+  background-size: cover;
+  background-position: center;
+  flex-grow: 1;
+`
+const FormInnerCont = styled.div`
+  position: relative;
+  @media(min-width: 768px){
+
+  }
+`
+const RateBarCont = styled.div`
+  //text-decoration: none;
+  position: absolute;
+  bottom: 30px;
+`
+const DownButton = styled.a`
+  text-decoration: none;
+  position: absolute;
+  bottom: -.9rem;
+  color: #000;
+  font-size: 1.8rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display :flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background-color: #fff;
+  color: ${props => props.theme.main.primaryColor};
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .12),
+              1px 2px 2px rgba(0, 0, 0, .12),
+              1px 4px 4px rgba(0, 0, 0, .12),
+              1px 8px 8px rgba(0, 0, 0, .12);
+`
+const SvgCont = styled.svg`
+  stroke: #fff;
+  transition: 250ms ease;
+  ${DownButton}:hover & {
+    stroke: ${props => props.theme.main.primaryColor};
+  }
 `
 
 export default ()=> {
-  const state = useContext(Context).about;
+  const state = useContext(Context);
+
   return(
     <MainCont>
       <Container>
         <TitleCont>
-          <Title className="animate__animated animate__fadeIn">
-            {state.hero.title}
-          </Title>
-        </TitleCont>        
+          <Title className="animate__animated animate__fadeInUp">
+            {state.about.hero.title}
+          </Title>        
+        </TitleCont>
       </Container>
+      <FormCont>
+        <Container>
+          <FormInnerCont>
+
+          </FormInnerCont>
+        </Container>
+      </FormCont>
+{/*      <Container>
+        <MainCont>
+          <Title className="animate__animated animate__fadeInUp">
+            {state.home.hero.title}
+          </Title>
+          <FormProperty shadow className="animate__animated animate__fadeInUp animate__delay-1s" />
+          <DownButton href="#properties" className="animate__animated animate__pulse animate__delay-3s animate__infinite">
+            <DownCircleFilled />
+          </DownButton>
+        </MainCont>
+</Container>      */}
     </MainCont>
   )
 }

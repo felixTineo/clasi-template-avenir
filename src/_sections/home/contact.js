@@ -6,22 +6,17 @@ import { Button } from '../../_components/buttons';
 
 const SectionCont = styled.div`
   margin-top: ${props => props.noMargin ? 0 : "4rem"};
+  padding: 2rem 0;
   //background-color: ${props => props.theme.main.primaryColor};
   //color: ${props => props.theme.main.primaryColor};
-  @media(min-width: 768px){
-    padding: 2rem 0;
-  }
 `
 const TextCont = styled.div`
   
 `
 const SectionText = styled.p`
-  text-align: center;
-  color: ${props => props.theme.main.primaryColor};
-  font-size: 1.5rem;
+  text-align: left;
   @media(min-width: 768px){
     font-size: 2rem;
-    width: 70%;
   }
 `
 
@@ -39,16 +34,16 @@ export default ({ noMargin })=> {
         <SectionCont noMargin={noMargin}>
           <Container>
             <Row align="center" justify="center">
-              <Col xs={12} md={12}>
+              <Col xs={12} md={9}>
                 <ButtonCont>
                   <SectionText>
                     {sectionText}
                   </SectionText>          
                 </ButtonCont>
               </Col>
-              <Col xs={12} md={12}>
+              <Col xs={12} md={3}>
                 <ButtonCont>
-                  <Button primary rounded>
+                  <Button primary block rounded>
                     Contactanos
                   </Button>
                 </ButtonCont>

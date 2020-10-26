@@ -12,7 +12,7 @@ const Title = styled.p`
   height: 100%;
   background-color: ${props => props.theme.main.primaryColor};
   color: #fff;
-  padding: 3rem;
+  padding: 2rem;
   //font-weight: bold;
   margin: 0;
   display: flex;
@@ -30,10 +30,9 @@ const Map = styled.img`
 export default ({ noContact })=> {
   const state = useContext(Context).about.ubication;
   return(
-    <Container>
     <MainCont>
       <Row nogutter>
-        <Col xs={12} md={6} >
+        <Col xs={12} md={6}>
           <Title>
             {state.title}
           </Title>
@@ -59,6 +58,5 @@ export default ({ noContact })=> {
         )
       }
     </MainCont>
-    </Container>
   )
 }

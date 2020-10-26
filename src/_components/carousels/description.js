@@ -3,7 +3,7 @@ import Context from '../../_context';
 import styled from 'styled-components';
 import { Visible, Hidden } from 'react-grid-system';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { LeftCircleFilled, RightCircleFilled } from '@ant-design/icons';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const DescriptioneCont = styled.div`
@@ -11,10 +11,10 @@ const DescriptioneCont = styled.div`
   //color: #fff;
 `
 const DescriptionTitle = styled.h2`
-  color: #fff;
+  //color: #fff;
 `
 const DescriptionDescription = styled.p`
-  color: #fff;
+  //color: #fff;
 `
 
 const Description = ({ id, description, title }) => {
@@ -56,10 +56,10 @@ export default ()=> {
             }
           </Slider>
           <ButtonBack className="carousel-back-button carousel-text-back-button carousel-desc-back-button">
-            <ArrowLeftOutlined style={{ color: "#fff", fontSize: 26 }} />
+            <LeftCircleFilled style={{ color, fontSize: 26 }} />
           </ButtonBack>
           <ButtonNext className="carousel-next-button carousel-text-next-button carousel-desc-next-button">
-            <ArrowRightOutlined style={{ color: "#fff", fontSize: 26 }} />
+            <RightCircleFilled style={{ color, fontSize: 26 }} />
           </ButtonNext>
           {/*
             Array(items.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)

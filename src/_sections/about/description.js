@@ -23,12 +23,12 @@ const Carousel = styled.div`
   //padding-bottom: 2rem;
   @media(min-width: 768px){
     //padding: 4rem;
-    //padding-top: 20%;
+    padding-bottom: 8rem;
   }
 `
 const CarouselInnerCont = styled.div`
   position: relative;
-  background-color: ${props => props.theme.main.primaryColor};
+  //background-color: ${props => props.theme.main.primaryColor};
   padding: 2rem;
 `
 

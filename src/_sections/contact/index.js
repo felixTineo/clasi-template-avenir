@@ -21,6 +21,7 @@ const Title = styled.h1`
   font-size: 30px;
   padding: 2rem;
   margin: 0;
+  text-align: center;
   @media(min-width: 768px){
     padding: 4rem;
   }  
@@ -28,10 +29,15 @@ const Title = styled.h1`
 const SubTitle = styled.p`
 
 `
+const FormCont = styled.div`
+  background-color: ${props => props.theme.main.primaryColor};
+  display: flex;
+  justify-content: center;
+`
 const Form = styled.form`
   padding: 2rem;
   //border-radius: 8px;
-  width: 100%;
+  width: 60%;
   margin: 0;
   background-color: ${props => props.theme.main.primaryColor};
   /*box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
@@ -54,6 +60,7 @@ const MailSpan = styled.span`
 `
 const SubTitleFooter = styled(SubTitle)`
   color: #fff;
+  text-align: center;
 `
 const ButtonContainer = styled.div`
    //margin-top: 32px;
@@ -83,9 +90,10 @@ export default ()=> {
             <Title>
               ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
             </Title>
+            <FormCont>
             <Form onSubmit={e=> e.preventDefault()}>
               <Row>
-                <Col xs={12} md={6}>
+                <Col xs={12} md={12}>
                   <Row>
                     <Col xs={12}>
                       <Input
@@ -112,15 +120,6 @@ export default ()=> {
                       />                                            
                     </Col>
                     <Col xs={12}>
-                      <ButtonContainer>
-                        <Button block rounded>Enviar</Button>
-                      </ButtonContainer>                  
-                    </Col>                              
-                  </Row>
-                </Col>    
-                <Col xs={12} md={6}>
-                  <Row>
-                    <Col xs={12}>
                       <Textarea
                         placeholder="Mensaje"
                         id="message"
@@ -128,19 +127,23 @@ export default ()=> {
                         rows={7}
                         vertical  
                       />                  
-                    </Col>
-                    <Col xs={12}>
+                    </Col>                    
+                    <Col xs={12} md={6}>
                       <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
-                    </Col>       
+                    </Col>                    
+                    <Col xs={12} md={6}>
+                      <Button rounded block>Enviar</Button>
+                    </Col>                             
                     <Col xs={12}>
                       <SubTitleFooter>
                         También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
                       </SubTitleFooter>                                                              
-                    </Col>
+                    </Col>                    
                   </Row>
-                </Col>
+                </Col>    
               </Row>
             </Form >        
+            </FormCont>
           </Col>
           <Col xs={12} md={12}>
             <MapTitle>

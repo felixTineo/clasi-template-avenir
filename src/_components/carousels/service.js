@@ -3,7 +3,7 @@ import Context from '../../_context';
 import styled from 'styled-components';
 import { Visible, Hidden } from 'react-grid-system';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
-import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { LeftCircleFilled , RightCircleFilled } from '@ant-design/icons';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const chunkArray = (myArray, chunk) =>{
@@ -103,10 +103,10 @@ export default ()=> {
             }
           </Slider>
           <ButtonBack className="carousel-back-button carousel-text-back-button">
-            <ArrowLeftOutlined style={{ color: "#fff", fontSize: 26 }} />
+            <LeftCircleFilled  style={{ color, fontSize: 26 }} />
           </ButtonBack>
           <ButtonNext className="carousel-next-button carousel-text-next-button">
-            <ArrowRightOutlined style={{ color: "#fff", fontSize: 26 }} />
+            <RightCircleFilled style={{ color, fontSize: 26 }} />
           </ButtonNext>
         </CarouselProvider>
       </Hidden>
@@ -129,10 +129,10 @@ export default ()=> {
             }
           </Slider>
             <ButtonBack className="carousel-back-button carousel-text-back-button">
-              <ArrowLeftOutlined style={{ color, fontSize: 26 }} />
+              <LeftCircleFilled  style={{ color, fontSize: 26 }} />
             </ButtonBack>
             <ButtonNext className="carousel-next-button carousel-text-next-button">
-              <ArrowRightOutlined style={{ color, fontSize: 26 }} />
+              <RightCircleFilled style={{ color, fontSize: 26 }} />
             </ButtonNext>
           </CarouselProvider>
       </Visible>

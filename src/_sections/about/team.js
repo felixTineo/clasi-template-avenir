@@ -9,13 +9,13 @@ const MainCont = styled.section`
 `
 
 const Title = styled.h2`
-  color: ${props => props.theme.main.primaryColor};
+  //color: ${props => props.theme.main.primaryColor};
   font-weight: 300;
   margin-bottom: 4rem;
   text-align: left;
   @media(min-width: 768px){
     padding: 4rem 0;
-    font-size: 50px;
+    font-size: 2rem;
   }
 `
 const Card = styled.div`
@@ -30,10 +30,13 @@ const Card = styled.div`
 `
 const Avatar = styled.img`
   width: 160px;
-  height: 160px;
+  height: 160px;  
   object-fit: cover;
   object-position: cover;
-  border-radius: 50%;
+  @media(min-width: 768px){
+    width: 100%;
+  //height: 160px;
+  }  
 `
 const Name = styled.p`
   color: ${props => props.theme.main.primaryColor};
@@ -41,6 +44,7 @@ const Name = styled.p`
   font-weight: bold;
 `
 const Description = styled.p`
+  height: 100px;
   overflow: hidden;
   text-align: left;
 `
@@ -51,7 +55,7 @@ const ContactCont = styled.ul`
   margin: 0;
 `
 const ContactInfo = styled.li`
-  font-weight: bold;
+  //font-weight: bold;
   text-align: left;
 `
 
@@ -68,9 +72,13 @@ export default ()=> {
           </Col>
           {
             state.members.map(m => (
-              <Col xs={12} md={3} key={m.id}>
+              <Col xs={12} md={6} key={m.id}>
                 <Card>
-                  <Avatar src={m.avatar} alt={m.lastName} />
+                  <Row>
+                    <Col xs={12} md={4}>
+                      <Avatar src={m.avatar} alt={m.lastName} />
+                    </Col>
+                    <Col xs={12} md={8}>
                   <Name>{m.firstName + " " + m.lastName}</Name>
                   <Description>
                     {m.description}
@@ -78,11 +86,12 @@ export default ()=> {
                   <ContactCont>
                     <ContactInfo>
                       {m.email}
-                    </ContactInfo>
-                    <ContactInfo>
+                      {" "}
                       {m.phone}                      
                     </ContactInfo>
                   </ContactCont>
+                  </Col>
+                  </Row>
                 </Card>
               </Col>
             ))

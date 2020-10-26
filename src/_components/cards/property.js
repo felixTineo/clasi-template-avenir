@@ -8,7 +8,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 480px;
+  height: 550px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   width: 100%;
@@ -65,7 +65,7 @@ const CardOperation = styled.span`
 const CardCharacteristics = styled.ul`
   list-style: none;
   //padding: 1rem;
-  color: #919191;
+  //color: #919191;
   font-size: 14px;
 `
 

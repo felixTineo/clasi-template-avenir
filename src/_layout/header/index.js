@@ -8,7 +8,7 @@ import NavMovil from './nav-movil';
 const MainCont = styled.header`
   color: #fff;
   position: fixed;
-  background-color: #fff;
+  background-color: ${props => props.theme.main.primaryColor};
   top: 0;
   left: 0;
   width: 100%;
