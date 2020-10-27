@@ -23,7 +23,7 @@ export default {
     },      
   },
   main:{
-    primaryColor: "#A5C4D6",
+    primaryColor: "#FFB630",
     secondaryColor: "#ffffff",
     favicon: "",
     logo:{
@@ -39,9 +39,8 @@ export default {
     },
     properties:{
       visible: true,
-      title: "Contamos con una selección exclusiva de propiedades.",
+      title: "Contamos con una seleción exclusiva de propiedades.",
       footer: "Estas son solo algunas de las propiedades que tenemos para ofrecerte",
-      bannerImage: "",
       buttonText: "Ver más",
       items:[
         {
@@ -404,7 +403,7 @@ export default {
   about:{
     hero:{
       visible: true,
-      title: "Un equipo de profesionales especializados en el sector inmobiliario.",
+      title: "Un equipo de profesionales especializado en el sector inmobiliario.",
       background: '/about-hero.jpg',
     },
     history:{
@@ -506,7 +505,7 @@ export default {
     },
     ubication:{
       visible: true,
-      title: "Encuéntranos en Sucursal Chicureo Camino a Chicureo 2 km. esquina Los Ingleses Colina - Santiago",
+      title: "Encuentrenos en Sucursal Chicureo Camino a Chicureo 2 km. esquina Los Ingleses Colina - Santiago",
       location:{
         coordinates:["0", "0"],
       }
