@@ -8,11 +8,13 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 550px;
+  height: 500px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   width: 100%;
   //margin:0 .3rem;
+  border-radius: 12px;
+  overflow: hidden;
   &:hover{
     //box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.108337);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
