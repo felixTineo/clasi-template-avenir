@@ -46,12 +46,12 @@ const Select = styled.select`
 export default (props)=> {
   return(
       <Select
-        defaultChecked="propiedad"
         {...props}
+        defaultChecked={props.default}
       >
-        <DefaultOption value="">{props.default}</DefaultOption>
+        <DefaultOption value="" disabled selected hidden>{props.default}</DefaultOption>
         {
-          props.options.map((o, index) => <Option key={index}>{o}</Option>)
+          props.options.map((o, index) => <Option value={o.toUpperCase()} key={index}>{o}</Option>)
         }       
       </Select>    
   )

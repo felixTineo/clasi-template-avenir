@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useCallback, useState } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
 import { Select, Input } from '../inputs';
@@ -35,6 +35,15 @@ const IconButton = styled.button`
   }
 `
 export default ({ block, shadow, className, filter })=> {
+  const [byCode, setByCode] = useState(false);
+
+  const onChangeForm = useCallback(e => {
+    if(e.target.value === "CÓDIGO"){
+      setByCode(true);
+    } else{
+      setByCode(false);
+    }
+  });
 
   return(
     <Fragment>
@@ -42,28 +51,42 @@ export default ({ block, shadow, className, filter })=> {
       <Row gutterWidth={32} align="center">
         <Col xs={12} md={2}>
           <Select
+            defaultChecked="propiedad"
+            onChange={onChangeForm}
             default="Buscar por"
-            options={["opcion 1", "opcion 2", "opcion 3"]}
+            options={["Propiedad", "Código"]}
             primary
           />
         </Col>        
-        <Col xs={12} md={2}>
-          <Select
-            default="Propiedad"
-            options={["opcion 1", "opcion 2", "opcion 3"]}
-            primary
-          />
-        </Col>
-        <Col xs={12} md={2}>
-          <Select
-            default="Operación"
-            options={["opcion 1", "opcion 2", "opcion 3"]}
-            primary
-          />
-        </Col>    
-        <Col xs={12} md={4}>
-          <Input placeholder="Comuna" />
-        </Col>        
+        {
+          byCode
+          ?(
+            <Col xs={12} md={8}>
+              <Input placeholder="Ingrese el código de la propiedad" />
+            </Col>    
+          )
+          :(
+            <Fragment>
+              <Col xs={12} md={2}>
+                <Select
+                  default="Propiedad"
+                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  primary
+                />
+              </Col>
+              <Col xs={12} md={2}>
+                <Select
+                  default="Operación"
+                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  primary
+                />
+              </Col>    
+              <Col xs={12} md={4}>
+                <Input placeholder="Comuna" />
+              </Col>    
+            </Fragment>                
+          )
+        }
         <Col xs={12} md={2}>
           <Hidden xs>
             <IconButton>

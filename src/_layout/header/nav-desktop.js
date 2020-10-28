@@ -71,13 +71,13 @@ export default ()=> {
             </NavLink>
           </Link>
         </NavItem>
-        <NavItem>
+{/*        <NavItem>
           <Link to="/news">
             <NavLink>
               Noticias
             </NavLink>
           </Link>
-        </NavItem>
+</NavItem>*/}
         <NavItem>
           <Link to="/contact">
             <NavLink>
