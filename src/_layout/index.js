@@ -5,6 +5,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import Header from './header';
 import Footer from './footer';
 import 'animate.css';
+import { useLayout } from '../_hooks';
+import LoaderScreen from '../_components/LoaderScreen';
 
 const Layout = styled.div`
   overflow: hidden;
@@ -20,7 +22,11 @@ const Body = styled.div`
 `
 
 export default ({ children })=> {
-
+  const { loading, data, error } = useLayout();
+  
+  if(loading) return <LoaderScreen />
+  if(error) return <p>error de conexión</p>
+  
   return(
     <Context.Provider value={data}>
       <ThemeProvider theme={data}>
