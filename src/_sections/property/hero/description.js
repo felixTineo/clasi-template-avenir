@@ -62,7 +62,7 @@ export default ({ description, className })=> {
               <EnvironmentOutlined />
             </SvgCont>
             <span>
-              {description.ubication.address}
+              {description.ubication.commune}
             </span>
           </UbicationCont>
         </Col>
