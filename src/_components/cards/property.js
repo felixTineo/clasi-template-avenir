@@ -94,7 +94,7 @@ export default ({
 })=> {
   const builderId = useContext(context).builderId
   return(
-    <Link to={`/property?builderId=${builderId}&propertyId=${_id}`} title="Ver propiedad">
+    <Link to={`/property?propertyId=${_id}`} title="Ver propiedad">
     <CardCont>
       <CardImage src={mainImage} />
       <CardInfo>

@@ -139,17 +139,18 @@ export default ()=> {
   const handleTop = ()=> window.scrollTo(0, 0);
   return(
     <Footer>
+      {console.log("LOGO FOOTER", state)}
       <MainFooter>
         <Container>
           <Row>
             <Col xs={12} md={4}>
               <Row>
                 <Col xs={12}>
-                <GatsbyLink to={`/?builderId=${builderId}`} style={{ textDecoration: 'none' }}>
+                <GatsbyLink to={`/`} style={{ textDecoration: 'none' }}>
                   <LogoCont>
                     {
-                      state.main.logo.isImage
-                        ?<Logo src={state.main.logo.value} alt="logo" />
+                      state.main.logoDark.isImage
+                        ?<Logo src={state.main.logoDark.value} alt="logo" />
                         :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
                     }
                   </LogoCont>                        
@@ -174,12 +175,12 @@ export default ()=> {
               <NavCont>
                 <Row>
                   <Col xs={6} md={6}>
-                    <NavLink to={`/about?builderId=${builderId}`}>
+                    <NavLink to={`/about`}>
                       Nosotros
                     </NavLink>
                   </Col>
                   <Col xs={6} md={6}>
-                    <NavLink to={`/properties?builderId=${builderId}`}>
+                    <NavLink to={`/properties`}>
                       Propiedades
                     </NavLink>                  
                   </Col>
@@ -191,7 +192,7 @@ export default ()=> {
                     </Col>
 </Visible>*/}
                   <Col xs={6} md={6}>
-                    <NavLink to={`/contact?builderId=${builderId}`}>
+                    <NavLink to={`/contact`}>
                       Contacto
                     </NavLink>                  
                   </Col>                                          

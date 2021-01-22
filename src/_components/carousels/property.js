@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, Fragment, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { chunkArray } from '../../_util';
 import Context from '../../_context';
@@ -32,9 +32,20 @@ const StyledDot = styled(Dot)`
 
 export default ()=> {
   const color = useContext(Context).main.primaryColor;
-  const items = useContext(Context).home.properties.items;
+  const office = useContext(Context).office;
+  const [items, setItems] = useState([]);
   const itemsDesk = chunkArray(items.map(item => item), 3);
-  console.log(itemsDesk.length);
+  useEffect(()=>{
+    (async()=>{
+      try{
+        const data = await fetch(`https://api.clasihome.com/rest/properties?id=${office.id}&typeId=${office.typeId}&status=PUBLICADA&limit=6`);
+        const result = await data.json();
+        setItems(result.properties);
+      }catch(e){
+        console.log(e);
+      }
+    })()
+  },[]);
   return(
     <Fragment>
       <Hidden xs>

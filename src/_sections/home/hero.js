@@ -20,11 +20,11 @@ const MainCont = styled.div`
   min-height: 100vh;
   background-color: ${props => props.theme.main.primaryColor};
   @media(min-width: 768px){
-    min-height: calc(100vh - (81px + 1.4rem));    
+    min-height: calc(100vh - (81px + 45px));    
   }
 `
 const TitleCont = styled.div`
-  min-height: calc(50vh - (81px + 1.4rem));    
+  min-height: calc(50vh - (81px + 45px));    
   display: flex;
   align-items: center;
 `
@@ -44,6 +44,7 @@ const FormCont = styled.div`
   background-image: url(${props => props.theme.home.hero.background});
   background-size: cover;
   background-position: center;
+  background-color: #fff;
 `
 const FormInnerCont = styled.div`
   position: relative;
@@ -110,17 +111,6 @@ export default ()=> {
           </FormInnerCont>
         </Container>
       </FormCont>
-{/*      <Container>
-        <MainCont>
-          <Title className="animate__animated animate__fadeInUp">
-            {state.home.hero.title}
-          </Title>
-          <FormProperty shadow className="animate__animated animate__fadeInUp animate__delay-1s" />
-          <DownButton href="#properties" className="animate__animated animate__pulse animate__delay-3s animate__infinite">
-            <DownCircleFilled />
-          </DownButton>
-        </MainCont>
-</Container>      */}
     </MainCont>
   )
 }

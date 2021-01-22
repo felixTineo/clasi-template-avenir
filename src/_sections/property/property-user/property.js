@@ -43,8 +43,8 @@ const CharItem = ({ icon, name, value }) => {
 
 export default ({ description })=> {
 
-  const charsGeneral = description.characteristics.filter(c => c.type === "GENERAL");
-  const charsOthers = description.characteristics.filter(c => c.type !== "GENERAL");
+  //const charsGeneral = description.characteristics.filter(c => c.type === "GENERAL");
+  //const charsOthers = description.characteristics.filter(c => c.type !== "GENERAL");
   return(
     <MainCont>
       <Row>

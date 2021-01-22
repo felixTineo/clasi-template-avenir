@@ -38,7 +38,7 @@ export default ({ data })=> {
       const result = await data.json();
       console.log("PROPETY URL", url);
       console.log("#PROPERTY DATA", result);
-      setQuery({ loading: false, data: result });
+      setQuery({ loading: false, dataQuery: result });
     }catch(e){
       console.log(e);
       setQuery({ loading: false, error: true });
@@ -71,6 +71,7 @@ export default ({ data })=> {
   );
   return(
     <Layout data={JSON.parse(data.initial.data)}>
+      {console.log("DATA QUERY",dataQuery)}
       <Hero state={dataQuery} />
       <PropertyUser state={dataQuery} />
       <Ubication coordinates={dataQuery.ubication.location.coordinates}/>

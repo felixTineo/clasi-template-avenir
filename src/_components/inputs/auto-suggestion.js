@@ -154,11 +154,11 @@ export default ({ selected, onSelect, id, placeholder, options, gray, shadow, pr
         autoComplete="off"
         primary={primary}
       />
-      {
+      {/*
         state.loading
         ?<LoadingOutlined />
         :<SearchOutlined />
-      }
+      */}
       {
         options
         ?(
