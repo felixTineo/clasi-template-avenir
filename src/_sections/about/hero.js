@@ -18,15 +18,19 @@ const MainCont = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: ${props => props.theme.main.primaryColor};
+  background-image: url(${props => props.theme.about.hero.background});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   @media(min-width: 768px){
-    min-height: calc(100vh - 81px);    
+    min-height: calc(100vh - (81px));    
   }
 `
 const TitleCont = styled.div`
-  min-height: calc(50vh - (81px + 1.4rem));    
   display: flex;
   align-items: center;
+  background-color: ${props => hexTorgba(props.theme.main.primaryColor, .5)};
+  backdrop-filter: blur(5px);
 `
 
 const Title = styled.h1`
@@ -41,10 +45,10 @@ const Title = styled.h1`
   }
 `
 const FormCont = styled.div`
-  background-image: url(${props => props.theme.about.hero.background});
   background-size: cover;
   background-position: center;
   flex-grow: 1;
+  background-color: transparent;
 `
 const FormInnerCont = styled.div`
   position: relative;
@@ -91,20 +95,14 @@ export default ()=> {
 
   return(
     <MainCont>
-      <Container>
+
         <TitleCont>
+          <Container>
           <Title className="animate__animated animate__fadeInUp">
             {state.about.hero.title}
-          </Title>        
+          </Title>  
+          </Container>      
         </TitleCont>
-      </Container>
-      <FormCont>
-        <Container>
-          <FormInnerCont>
-
-          </FormInnerCont>
-        </Container>
-      </FormCont>
 {/*      <Container>
         <MainCont>
           <Title className="animate__animated animate__fadeInUp">

@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Context from '../../../_context';
 import { Container, Row, Col } from 'react-grid-system';
+import { hexTorgba } from '../../../_util';
 
 import Gallery from './gallery';
 import Description from './description';
 
 const MainCont = styled.div`
-  padding-top: 10rem;
+  padding-top: 2rem;
   background-color: ${props => props.theme.main.primaryColor};
 `
 export default ({ state })=> {

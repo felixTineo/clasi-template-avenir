@@ -17,16 +17,20 @@ const VeryMainCont = styled.section`
 const MainCont = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  background-color: ${props => props.theme.main.primaryColor};
+  height: 100vh;
+  background-image: url(${props => props.theme.home.hero.background});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   @media(min-width: 768px){
-    min-height: calc(100vh - (81px + 45px));    
+    height: calc(100vh - (81px + 50px));    
   }
 `
 const TitleCont = styled.div`
-  min-height: calc(50vh - (81px + 45px));    
   display: flex;
   align-items: center;
+  background-color: ${props => hexTorgba(props.theme.main.primaryColor, .5)};
+  backdrop-filter: blur(5px);
 `
 
 const Title = styled.h1`
@@ -41,10 +45,8 @@ const Title = styled.h1`
   }
 `
 const FormCont = styled.div`
-  background-image: url(${props => props.theme.home.hero.background});
-  background-size: cover;
-  background-position: center;
-  background-color: #fff;
+height: 100%;    
+  //background-color: #fff;
 `
 const FormInnerCont = styled.div`
   position: relative;
@@ -52,7 +54,7 @@ const FormInnerCont = styled.div`
   padding-top: 6rem;
   padding-bottom: 2rem;
   @media(min-width: 768px){
-    height: 50vh;
+    height: 100%;    
   }
 `
 const RateBarCont = styled.div`
@@ -63,7 +65,7 @@ const RateBarCont = styled.div`
 const DownButton = styled.a`
   text-decoration: none;
   position: absolute;
-  bottom: -.9rem;
+  bottom: -20px;
   color: #000;
   font-size: 1.8rem;
   width: 40px;
@@ -94,15 +96,17 @@ export default ()=> {
 
   return(
     <MainCont>
-      <Container>
+      
         <TitleCont>
+        <Container>
           <Title className="animate__animated animate__fadeInUp">
             {state.home.hero.title}
           </Title>        
+          </Container>
         </TitleCont>
-      </Container>
+      
       <FormCont>
-        <Container>
+        <Container style={{ height: "100%" }}>
           <FormInnerCont>
             <FormProperty shadow className="animate__animated animate__fadeInUp animate__delay-1s" />
             <DownButton href="#properties" className="animate__animated animate__pulse animate__delay-3s animate__infinite">

@@ -9,6 +9,7 @@ const MainCont = styled.header`
   color: #fff;
   position: fixed;
   background-color: ${props => props.theme.main.primaryColor};
+  //filter: brightness(.95) ;
   top: 0;
   left: 0;
   width: 100%;
