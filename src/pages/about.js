@@ -13,8 +13,8 @@ export default ({ data })=> (
     <Hero />
     <History />
     <Description />
-    <Stats />    
-    <Team />
+    {/*<Stats />    
+    <Team />*/}
     <Ubication />
   </Layout>
 );

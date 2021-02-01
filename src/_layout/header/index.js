@@ -27,6 +27,7 @@ export default ()=> {
       <Hidden xs>
         <MainCont>
           <Container>
+            <RateBar />
             <NavDesktop />
           </Container>
         </MainCont>

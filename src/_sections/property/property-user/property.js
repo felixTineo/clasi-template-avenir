@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Row, Col, Hidden, Visible } from 'react-grid-system';
 import InteractionButtons from '../interaction-buttons';
 import Icons from '../../../_icons';
+import { chunkArray } from '../../../_util';
 
 const MainCont = styled.div`
   padding: 2rem 1rem;
@@ -12,6 +13,7 @@ const MainCont = styled.div`
 const PublicObs = styled.p`
   font-weight: bold;
   margin: 2rem 0;
+  white-space: pre-line;
 `
 
 const CharsCont = styled.ul`
@@ -45,6 +47,7 @@ export default ({ description })=> {
 
   //const charsGeneral = description.characteristics.filter(c => c.type === "GENERAL");
   //const charsOthers = description.characteristics.filter(c => c.type !== "GENERAL");
+  const characteristics = chunkArray(description.characteristics.map(c => c), Math.floor(description.characteristics.length / 2 + 1));
   return(
     <MainCont>
       <Row>
@@ -62,8 +65,9 @@ export default ({ description })=> {
             <Col xs={12} md={6}>
               <CharsCont>
                 {
+                  //console.log("CHARACTERISTICS", description),
                   //charsGeneral.slice(0, 7).map((c) => <CharItem key={c.id} {...c} />)
-                  description.characteristics.slice(0, description.characteristics.length / 2).map((c) => <CharItem key={c.id} {...c} />)
+                  characteristics[0].map((c) => <CharItem key={c.id} {...c} />)
                 }
               </CharsCont>
             </Col>
@@ -71,7 +75,7 @@ export default ({ description })=> {
               <CharsCont>
                 {
                   //charsGeneral.slice(7, charsGeneral.length).map((c) => <CharItem key={c.id} {...c} />)
-                  description.characteristics.slice(description.characteristics.length / 2, -1).map((c) => <CharItem key={c.id} {...c} />)
+                  characteristics[1] && characteristics[1].map((c) => <CharItem key={c.id} {...c} />)
                 }        
               </CharsCont>      
             </Col>            

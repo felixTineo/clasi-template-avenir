@@ -12,7 +12,10 @@ const MainCont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 4rem;
+  margin-top: 10rem;
+  @media(min-width: 768px){
+    margin-top: 4rem;
+  }
 `
 
 const Title = styled.h1`
@@ -132,7 +135,7 @@ export default ()=> {
                     </Col>                             
                     <Col xs={12}>
                       <SubTitleFooter>
-                        También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+                        También puede escribirnos a <MailSpan>frick.propiedades@gmail.com</MailSpan>
                       </SubTitleFooter>                                                              
                     </Col>                    
                   </Row>
@@ -150,10 +153,10 @@ export default ()=> {
           {
             lat && (
               <Map
-              lat={parseFloat(lat)}
-              lng={parseFloat(lng)}
+              lat={parseFloat(lng)}
+              lng={parseFloat(lat)}
               height={300}
-              zoom={3}
+              zoom={15}
             />         
             )
           } 

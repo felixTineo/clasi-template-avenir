@@ -9,7 +9,7 @@ import Description from './description';
 
 const MainCont = styled.div`
   padding-top: 2rem;
-  background-color: ${props => props.theme.main.primaryColor};
+  //background-color: ${props => props.theme.main.primaryColor};
 `
 export default ({ state })=> {
   return(

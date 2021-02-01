@@ -15,8 +15,10 @@ const FooterRightsCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
   color: ${props => props.theme.main.secondaryColor};
   padding: 2rem 0;
+  font-size: 1rem;
   @media(min-width: 768px){
     padding: .5rem 0;
+    font-size: .8rem;
   }  
 `
 const OfficeInfoCont = styled.ul`
@@ -239,7 +241,7 @@ export default ()=> {
       <FooterRightsCont>
         <Container>
           <FooterRights>
-            <li>2020 © Todos los derechos reservados</li>
+            <li>2021 © Todos los derechos reservados</li>
             <li>Desarrollado por <DevelopBy href="https://clasihome.com/" alt="clasihome website" rel="noopener" target="_blank">Clasihome</DevelopBy></li>
           </FooterRights>
         </Container>

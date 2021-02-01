@@ -19,7 +19,7 @@ const MainCont = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: ${props => props.theme.main.primaryColor};
+  //background-color: ${props => props.theme.main.primaryColor};
   @media(min-width: 768px){
     min-height: calc(100vh - (81px + 1.4rem));    
   }
@@ -35,7 +35,7 @@ const Title = styled.h1`
   max-width: 95%;
   font-size: 32px;
   text-align: left;
-  color: #fff;
+  color: ${props => props.theme.main.primaryColor}; 
   @media(min-width: 768px){
     max-width: 70%;
     font-size: 50px;

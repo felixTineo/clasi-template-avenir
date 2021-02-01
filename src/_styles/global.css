@@ -34,7 +34,7 @@ button{
   font-size: 1rem;
 }
 
-button, input{
+button, input, textarea{
   outline: none;
   font-family: 'Poppins', sans-serif;
 }

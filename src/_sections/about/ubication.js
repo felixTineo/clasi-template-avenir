@@ -27,6 +27,7 @@ export default ({ noContact })=> {
   const { lat, lng } = useContext(Context).office;
   return(
     <MainCont>
+      {console.log("UBICATION", lng, lat)}
       <Row nogutter>
         <Col xs={12} md={6}>
           <Title>
@@ -37,10 +38,10 @@ export default ({ noContact })=> {
           {
             lat && (
               <Map
-              lat={parseFloat(lat)}
-              lng={parseFloat(lng)}
+              lat={parseFloat(lng)}
+              lng={parseFloat(lat)}
               height={300}
-              zoom={3}
+              zoom={15}
             />         
             )
           }  

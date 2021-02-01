@@ -76,7 +76,7 @@ const ContactForm = styled.form`
   //margin-top: 3rem;
   //height: 100%;
   background-color: ${props => props.theme.main.primaryColor};
-  padding: 1rem;
+  padding: 2rem;
   padding-bottom: 2rem;
   color: #fff;
 `
@@ -166,7 +166,7 @@ export default ({ description })=> {
           <Col xs={12} md={12}>
             <ContactFormButtons>
               <Button block>
-                Whatsapp
+                WhatsApp
               </Button>
             </ContactFormButtons>
           </Col>          

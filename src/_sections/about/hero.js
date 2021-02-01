@@ -29,8 +29,13 @@ const MainCont = styled.div`
 const TitleCont = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${props => hexTorgba(props.theme.main.primaryColor, .5)};
+  //background-color: ${props => hexTorgba(props.theme.main.primaryColor, .5)};
   backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
+              0px 2px 2px rgba(0, 0, 0, .12),
+              0px 4px 4px rgba(0, 0, 0, .12),
+              0px 8px 8px rgba(0, 0, 0, .12);  
 `
 
 const Title = styled.h1`
@@ -96,7 +101,7 @@ export default ()=> {
   return(
     <MainCont>
 
-        <TitleCont>
+        <TitleCont className="animate__animated animate__fadeIn animate__slow">
           <Container>
           <Title className="animate__animated animate__fadeInUp">
             {state.about.hero.title}

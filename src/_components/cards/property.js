@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import context from '../../_context';
 import Link from '../link';
 import styled from 'styled-components';
-import { truncate, FormatCurrency } from '../../_util';
+import { truncate, priceFormat } from '../../_util';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -99,19 +99,31 @@ export default ({
       <CardImage src={mainImage} />
       <CardInfo>
         <CardTitleCont>
-          <CardTitle>{truncate(title, 30)}</CardTitle>
-            <CardPrice>{`${currency} ${FormatCurrency(currency, value)}`}</CardPrice>
+          <CardTitle>{truncate(title, 50)}</CardTitle>
+            <CardPrice>{`${currency} ${priceFormat(value)}`}</CardPrice>
             <li style={{ margin: "1rem 0" }}>
               <CardOperation>Venta - </CardOperation>
               <span>cod {code}</span>
             </li>
         </CardTitleCont>
         <CardCharacteristics>
-          <CharItem>{truncate(ubication.address, 30)}</CharItem>
           {
-            characteristics.slice(0, 2).map((char, index) => (
+            characteristics.filter(char => (
+              char.name === "Superficie total" ||
+              char.name === "Superficie útil" ||
+              char.name === "Habitaciones" ||
+              char.name === "Baños" ||
+              char.name === "Estacionamientos"
+
+            ) ).map((char, index) => (
               <CharItem key={index}>
-                <span>{char.name} {char.value} {char.name === "Sup. Total" && "mt2"}</span>
+                {/*
+                  char.name === "Superficie total" && <img src="/icons/surface.svg" /> ||
+                  char.name === "Superficie útil" && <img src="/icons/surface.svg" />  ||
+                  char.name === "Habitaciones" && <img src="/icons/rooms.svg" /> ||
+                  char.name === "Baños" && <img src="/icons/bath.svg" />
+                */}
+                <span>{char.name} {char.value} {char.name === "Superficie total" && "mt2" || char.name === "Superficie útil" && "mt2"}</span>
               </CharItem>
             ))
           }
