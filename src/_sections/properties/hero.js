@@ -1,15 +1,15 @@
-import React, { useContext, useState, Fragment } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Context from '../../_context';
 import { FormProperty } from '../../_components/forms'
-import { Container, Hidden } from 'react-grid-system';
+import { Container } from 'react-grid-system';
 import RateBar from '../../_layout/header/rate-bar';
-//import { DownCircleFilled, DownOutlined } from '@ant-design/icons';
-import { DownCircleFilled, DownOutlined, UpOutlined } from '@ant-design/icons';
+import { DownCircleFilled, DownOutlined } from '@ant-design/icons';
 import { hexTorgba } from '../../_util';
 
 const VeryMainCont = styled.section`
-  background-image: ${props => `linear-gradient(${hexTorgba(props.theme.main.primaryColor, .8)},${hexTorgba(props.theme.main.primaryColor, .8)})`}, url(${props => props.theme.home.hero.background});
+  //background-image: ${props => `linear-gradient(${hexTorgba(props.theme.main.primaryColor, .8)},${hexTorgba(props.theme.main.primaryColor, .8)})`}, url(${props => props.theme.home.hero.background});
+  background: transparent;
   background-position: right bottom;
   //background-size: cover;
   background-repeat: no-repeat;
@@ -18,16 +18,24 @@ const VeryMainCont = styled.section`
 const MainCont = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  //background-color: ${props => props.theme.main.primaryColor};
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, .3),rgba(0, 0, 0, .3)),  url(${props => props.theme.home.hero.background});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   @media(min-width: 768px){
-    min-height: calc(100vh - (81px + 1.4rem));    
+    height: calc(100vh - (81px + 50px));    
   }
 `
 const TitleCont = styled.div`
-  min-height: calc(50vh - (81px + 1.4rem));    
   display: flex;
   align-items: center;
+  //background-color: ${props => hexTorgba(props.theme.main.primaryColor, .5)};
+  /*backdrop-filter: blur(5px);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
+              0px 2px 2px rgba(0, 0, 0, .12),
+              0px 4px 4px rgba(0, 0, 0, .12),
+              0px 8px 8px rgba(0, 0, 0, .12);*/
 `
 
 const Title = styled.h1`
@@ -35,16 +43,15 @@ const Title = styled.h1`
   max-width: 95%;
   font-size: 32px;
   text-align: left;
-  color: ${props => props.theme.main.primaryColor}; 
+  color: #fff;
   @media(min-width: 768px){
     max-width: 70%;
     font-size: 50px;
   }
 `
 const FormCont = styled.div`
-  background-image: url(${props => props.theme.home.hero.background});
-  background-size: cover;
-  background-position: center;
+height: 100%;    
+  //background-color: #fff;
 `
 const FormInnerCont = styled.div`
   position: relative;
@@ -52,13 +59,18 @@ const FormInnerCont = styled.div`
   padding-top: 6rem;
   padding-bottom: 2rem;
   @media(min-width: 768px){
-    height: 50vh;
+    height: 100%;    
   }
+`
+const RateBarCont = styled.div`
+  //text-decoration: none;
+  position: absolute;
+  bottom: 30px;
 `
 const DownButton = styled.a`
   text-decoration: none;
   position: absolute;
-  bottom: -.9rem;
+  bottom: -20px;
   color: #000;
   font-size: 1.8rem;
   width: 40px;
@@ -84,71 +96,24 @@ const SvgCont = styled.svg`
   }
 `
 
-const RateBarCont = styled.div`
-  //text-decoration: none;
-  position: absolute;
-  width: 100%;
-  bottom: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  @media(min-width: 768px){
-    flex-direction: row;
-    align-items: flex-end;
-    bottom: 30px;
-  }
-`
-const FitlerButton = styled.button`
-  border: none;
-  background: transparent;
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  transition: 250ms ease;
-  &:hover{
-    //border-bottom: 1px solid #fff;
-    text-decoration: underline;
-  }
-`
-
 export default ()=> {
   const state = useContext(Context);
-  const [filter, setFilter] = useState(false);
+
   return(
     <MainCont>
-      <Container>
-        <TitleCont>
+      
+        <TitleCont className="animate__animated animate__fadeIn animate__slow">
+        <Container>
           <Title className="animate__animated animate__fadeInUp">
             {state.home.hero.title}
           </Title>        
+          </Container>
         </TitleCont>
-      </Container>
+      
       <FormCont>
-        <Container>
+        <Container style={{ height: "100%" }}>
           <FormInnerCont>
-            <FormProperty filter={filter} shadow className="animate__animated animate__fadeInUp animate__delay-1s" />
-            <RateBarCont href="#properties" className="animate__animated animate__fadeInUp animate__delay-2s">
-          <Hidden xs>
-            <RateBar />
-          </Hidden>
-          <FitlerButton onClick={()=> setFilter(!filter)}>
-            {
-              filter
-              ?(
-                <Fragment>
-                  Menos filtros
-                  <UpOutlined style={{ marginLeft: 8 }} />                     
-                </Fragment>
-              )
-              :(
-                <Fragment>
-                  Más filtros
-                  <DownOutlined style={{ marginLeft: 8 }} />               
-                </Fragment>
-              )
-            }
-          </FitlerButton>
-        </RateBarCont>            
+            <FormProperty shadow className="animate__animated animate__fadeInUp animate__delay-1s" />
             <DownButton href="#properties" className="animate__animated animate__pulse animate__delay-3s animate__infinite">
               <DownOutlined />
             </DownButton>          

@@ -19,7 +19,7 @@ const MainCont = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-image: url(${props => props.theme.home.hero.background});
+  background-image: linear-gradient(rgba(0, 0, 0, .3),rgba(0, 0, 0, .3)),  url(${props => props.theme.home.hero.background});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -31,11 +31,11 @@ const TitleCont = styled.div`
   display: flex;
   align-items: center;
   //background-color: ${props => hexTorgba(props.theme.main.primaryColor, .5)};
-  backdrop-filter: blur(5px);
+  /*backdrop-filter: blur(5px);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
               0px 2px 2px rgba(0, 0, 0, .12),
               0px 4px 4px rgba(0, 0, 0, .12),
-              0px 8px 8px rgba(0, 0, 0, .12);
+              0px 8px 8px rgba(0, 0, 0, .12);*/
 `
 
 const Title = styled.h1`

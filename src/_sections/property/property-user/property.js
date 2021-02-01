@@ -11,7 +11,7 @@ const MainCont = styled.div`
   border-right: none;
 `
 const PublicObs = styled.p`
-  font-weight: bold;
+  //font-weight: bold;
   margin: 2rem 0;
   white-space: pre-line;
 `
@@ -65,17 +65,15 @@ export default ({ description })=> {
             <Col xs={12} md={6}>
               <CharsCont>
                 {
-                  //console.log("CHARACTERISTICS", description),
-                  //charsGeneral.slice(0, 7).map((c) => <CharItem key={c.id} {...c} />)
-                  characteristics[0].map((c) => <CharItem key={c.id} {...c} />)
+                  console.log("DESCRIPTION.CHARACTERISTICS", description.characteristics),
+                  description.characteristics.slice(0, Math.ceil(description.characteristics.length / 2)).map((c) => <CharItem key={c.id} {...c} />)
                 }
               </CharsCont>
             </Col>
             <Col xs={12} md={6}>
               <CharsCont>
                 {
-                  //charsGeneral.slice(7, charsGeneral.length).map((c) => <CharItem key={c.id} {...c} />)
-                  characteristics[1] && characteristics[1].map((c) => <CharItem key={c.id} {...c} />)
+                  description.characteristics.slice(Math.ceil(description.characteristics.length / 2), description.characteristics.length).map((c) => <CharItem key={c.id} {...c} />)
                 }        
               </CharsCont>      
             </Col>            
