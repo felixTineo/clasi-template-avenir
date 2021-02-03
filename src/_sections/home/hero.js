@@ -18,12 +18,14 @@ const VeryMainCont = styled.section`
 const MainCont = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  margin-top: 94.75px;
+  height: calc(100vh - 94.75px);
   background-image: linear-gradient(rgba(0, 0, 0, .3),rgba(0, 0, 0, .3)),  url(${props => props.theme.home.hero.background});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   @media(min-width: 768px){
+    margin-top: 0;
     height: calc(100vh - (81px + 50px));    
   }
 `

@@ -160,11 +160,11 @@ export default ()=> {
                 </Col>
                 <Col xs={12}>
                   <OfficeInfoCont>
-                    <OfficeInfo>
+                    {/*<OfficeInfo>
                       {office.address}
-                    </OfficeInfo>
+                    </OfficeInfo>*/}
                     <OfficeInfo>
-                      +{office.phone}
+                      {office.phone}
                     </OfficeInfo>
                     <OfficeInfo>
                       {office.email}

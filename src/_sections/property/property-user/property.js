@@ -65,7 +65,6 @@ export default ({ description })=> {
             <Col xs={12} md={6}>
               <CharsCont>
                 {
-                  console.log("DESCRIPTION.CHARACTERISTICS", description.characteristics),
                   description.characteristics.slice(0, Math.ceil(description.characteristics.length / 2)).map((c) => <CharItem key={c.id} {...c} />)
                 }
               </CharsCont>

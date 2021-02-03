@@ -17,12 +17,16 @@ const VeryMainCont = styled.section`
 const MainCont = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  justify-content: center;
+  margin-top: 94.75px;
+  height: calc(100vh - 94.75px);
   background-image: linear-gradient(rgba(0, 0, 0, .3),rgba(0, 0, 0, .3)), url("/about-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   @media(min-width: 768px){
+    justify-content: flex-start;
+    margin-top: 0px;
     min-height: calc(100vh - (81px));    
   }
 `
