@@ -144,11 +144,11 @@ export default ()=> {
             </Form >        
             </FormCont>
           </Col>
-          <Col xs={12} md={12}>
+{/*          <Col xs={12} md={12}>
             <MapTitle>
               Visitanos en {" "}{state.office.address}
             </MapTitle>
-          </Col>
+  </Col>
           <Col xs={12} md={12}>
           {
             lat && (
@@ -160,7 +160,7 @@ export default ()=> {
             />         
             )
           } 
-          </Col>
+        </Col>*/}
         </Row>
       </MainCont>
     </Container>

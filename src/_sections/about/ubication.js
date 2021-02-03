@@ -29,12 +29,12 @@ export default ({ noContact })=> {
     <MainCont>
       {console.log("UBICATION", lng, lat)}
       <Row nogutter>
-        <Col xs={12} md={6}>
+{/*        <Col xs={12} md={6}>
           <Title>
             {state.title}
           </Title>
-        </Col>
-        <Col xs={12} md={6}>
+  </Col>*/}
+        <Col xs={12}>
           {
             lat && (
               <Map

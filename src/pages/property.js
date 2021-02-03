@@ -74,7 +74,7 @@ export default ({ data })=> {
       {console.log("DATA QUERY",dataQuery)}
       <Hero state={dataQuery} />
       <PropertyUser state={dataQuery} />
-      <Ubication coordinates={dataQuery.ubication.location.coordinates}/>
+      {/*<Ubication coordinates={dataQuery.ubication.location.coordinates}/>*/}
       <Properties noMargin />
       <Visible xs>
         <Container>
